@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+	<record model="ir.ui.view" id="appointment_wizard_form">
+            <field name="name">appointment_wizard.form</field>
+            <field name="model">appointment.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Appointment Wizard" version="7.0">
+                    <header>
+                        
+                        <button name="show_record" string="Show" type="object"/>
+                          <button special="cancel" string="Cancel"/>  
+                	</header>
+					<group colspan="4" col='4'>
+	                    
+	                    <field name="phy_id"/>
+	                    <field name="a_date" />
+	                    
+	                    
+					</group>
+					
+                </form>
+            </field>
+        </record>
+        
+        
+        
+        <!-- <act_window name="Appointment Wizard"
+            res_model="appointment.wizard"
+            
+            key2="client_action_multi"
+            multi="True"
+            view_mode="form"
+            view_type="form"
+            target="new"
+            id="action_appointment_wizard"/> -->
+            
+            
+        <record model="ir.actions.act_window" id="appointment_wizard_act">
+            <field name="name">Appointment Wizard</field>
+            <field name="res_model">appointment.wizard</field>
+            <field name="view_id" ref="appointment_wizard_form"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    	
+        <menuitem action="appointment_wizard_act" id="appointment_wizard_act_form" parent="medical_appointment_menu" sequence="1" />    
+            
+          
+            
+
+ </data>
+</openerp>      
